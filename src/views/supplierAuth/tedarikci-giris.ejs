@@ -1,0 +1,14 @@
+<div>
+    <form action="/tedarikci-ol/tedarikci-giris" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="supemail">
+        </div>
+        <div>
+            <label for="password">Şifre</label>
+            <input type="password" name="suppassword">
+        </div>
+        <input type="submit" value="Giriş Yap">
+    </form>
+</div>

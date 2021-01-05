@@ -1,0 +1,16 @@
+<div>
+    <form method="POST" action="/profil">
+        
+        <input name="userid" type="hidden" value="<%= user._id %>">
+        <div>
+            <label for="username">Adınız</label>
+            <input type="text" name="username" id="" value="<%= user.name %>">
+        </div>
+        <div>
+            <label for="useremail">Email</label>
+            <input type="text" name="useremail" id="" value="<%= user.email %>">
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <input type="submit" value="Kaydet">
+    </form>
+</div>

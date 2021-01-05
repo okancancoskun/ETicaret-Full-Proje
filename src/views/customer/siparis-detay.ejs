@@ -1,0 +1,22 @@
+<h1><%= order._id %></h1>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 100px">Ürün ismi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% order.items.forEach(item => { %>
+      <tr>
+        <input type="hidden" class="productid" name="productid" value="<%= item.product._id %>" />
+        <td><%= item.product.name %></td>
+        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open modal</button></td>
+      </tr>
+
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<div><%- include('../includes/comment-modal') %></div>

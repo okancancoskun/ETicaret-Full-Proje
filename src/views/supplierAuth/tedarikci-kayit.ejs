@@ -1,0 +1,18 @@
+<div>
+    <form action="/tedarikci-ol/tedarikci-kayit" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div>
+            <label for="name">İsim</label>
+            <input type="text" name="supname">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="supemail">
+        </div>
+        <div>
+            <label for="password">Şifre</label>
+            <input type="password" name="suppassword">
+        </div>
+        <input type="submit" value="Kayıt ol">
+    </form>
+</div>

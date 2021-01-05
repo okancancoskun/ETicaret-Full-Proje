@@ -1,0 +1,26 @@
+<h1><%= order._id %></h1>
+<input type="hidden" name="orderId" />
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 100px">Ürün ismi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.forEach(item => { %>
+      <tr>
+        <td><%= item.product.name %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<form action="/tedarikci/siparis-detay" method="post">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+  <input type="hidden" name="orderId" value="<%= order._id %>" />
+  <label for="shipmentId">Gönderi Numarası Giriniz</label>
+  <input type="text" name="shipmentId" />
+  <input type="submit" value="Gönder" />
+</form>

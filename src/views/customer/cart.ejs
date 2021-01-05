@@ -1,0 +1,17 @@
+<input type="hidden" name="_csrf" value="<%= csrfToken %>" id="csrf">
+<table class="product-table">
+    <thead>
+        <tr>
+            <th style="width: 100px;">Ürün ismi</th>
+            <th style="width: 100px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% products.forEach(product => { %>
+        <tr>
+            <td id="productname"><%= product.productId.name %></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+<a class="btn btn-primary" href="/sepetim/payment">Alışverişi tamamla</a>

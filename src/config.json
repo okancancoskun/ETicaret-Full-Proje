@@ -1,0 +1,10 @@
+{
+  "dbUrl": "mongodb+srv://okan154:8318913@cluster0.sliia.mongodb.net/E-Ticaret?retryWrites=true&w=majority",
+  "session": {
+    "secretKey": "SPACE_CATS_ARE_AWESOME"
+  },
+  "google": {
+    "clientID": "376659199775-0460c8l28ebvrs63umtb5smeg7kkte7c.apps.googleusercontent.com",
+    "clientKey": "Zb8TGN25iBj7MykFTZkWrKgy"
+  }
+}

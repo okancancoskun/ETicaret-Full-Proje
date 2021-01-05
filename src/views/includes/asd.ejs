@@ -1,0 +1,13 @@
+<% orders.forEach(order => { %>
+<p>Sipariş NO : <%= order._id %></p>
+<% order.items.forEach(item => { %>
+<p>Ürün Adı:<%= item.product.name %></p>
+<a href="/urun-detay/<%= item.product.category %>/<%= item.product.description %>/<%= item.product._id %>">Ürün Linki</a>
+<% }) %> <% }) %> <% orders.forEach(order => { %> <% order.items.forEach(item => { %>
+<form action="/create-comment" method="POST">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+  <input name="productId" type="hidden" value="<%= item.product._id%>" />
+  <textarea type="text" name="comment"></textarea>
+  <input type="submit" value="Gönder" />
+</form>
+<% }) %> <% }) %>

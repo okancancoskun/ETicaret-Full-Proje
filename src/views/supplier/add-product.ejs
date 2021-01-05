@@ -1,0 +1,26 @@
+<form action="/tedarikci/add-product" method="post" id="add-product">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div>
+        <label for="name">Product Name</label>
+        <input type="text" name="name" id="productName">
+    </div>
+
+    <div>
+        <label for="description">Product Description</label>
+        <input type="text" name="description" id="productdesc">
+    </div>
+    <div>
+        <label for="category">Kategori Seçiniz</label>
+        <select name="category">
+            <option value="-1">Select Category</option>
+            <% categories.forEach(category => { %>
+            <option value="<%=category._id%>"><%= category.name %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div>
+        <label for="city">Şehir Giriniz</label>
+        <input type="text" name="city">
+    </div>
+    <input type="submit" value="Gönder">
+</form>

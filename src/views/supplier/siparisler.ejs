@@ -1,0 +1,24 @@
+<% orders.forEach(order => { %>
+
+<div class="card mb-5">
+  <div class="card-header">
+    <h3>Order id:<%= order._id %></h3>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 100px">Ürün ismi</th>
+        <th style="width: 100px"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% order.items.forEach(item => { %>
+      <tr>
+        <td><%=item.product.name %></td>
+        <td><a href="/tedarikci/siparis-detay/<%= order._id %>">Sipariş Detayları</a></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+<% }) %>

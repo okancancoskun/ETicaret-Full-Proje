@@ -1,0 +1,14 @@
+<% if (products.length > 0) { %>
+<% products.forEach(product => { %>
+<p><%= product.productId.name %></p>
+<% }) %>
+<% } else { %>
+<h1>
+    Sepetinizde Ürün bulunmamaktadır.
+</h1>
+<% } %>
+
+<form action="/create-order" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="submit" value="Alışverişi Tamamla">
+</form>

@@ -1,0 +1,26 @@
+<table class="product-table">
+    <thead>
+        <tr>
+            <th style="width: 100px;">Tedarikci ismi</th>
+            <th style="width: 100px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% suppliers.forEach(supplier => { %>
+        <tr>
+            <td>
+                <%= supplier.name %> 
+            </td>
+            <td>
+                <form action="/admin/tedarikci-onay" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <input type="hidden" name="supplierid" value="<%= supplier._id %>">
+                    <input class="btn btn-primary btn-sm" type="submit" value="Onayla" name="confirmation">
+                    <input class="btn btn-danger btn-sm" type="submit" value="Reddet" name="confirmation">
+                </form>
+            </td>
+        </tr>
+        <% }) %>
+
+    </tbody>
+</table>

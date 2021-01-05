@@ -1,0 +1,26 @@
+<p>Home Page</p>
+<div>
+    <form action="/search" method="GET">
+        <input type="text" name="look">
+        <input type="submit" value="Ara">
+    </form>
+</div>
+<a href="/profil">Profil</a>
+<div class="container">
+    <% products.forEach(product => { %>
+    <div class="card col-lg-3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= product.description %></p>
+            <a href="/urun-detay/<%= product.category.slug %>/<%= product.city %>-<%= product.slug %>"
+                class="btn btn-primary">Detaylar</a>
+            <form action="/sepetim" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="hidden" name="productId" value="<%=product._id%>">
+                <input type="submit" class="btn btn-outline-primary btn-sm" value="Add to Cart">
+            </form>
+        </div>
+    </div>
+    <% }) %>
+
+</div>

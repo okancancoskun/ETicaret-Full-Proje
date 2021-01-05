@@ -1,0 +1,15 @@
+<div>
+    <form action="/admin/kategori-ekle" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div>
+            <label for="categoryname">Kategori Adı</label>
+            <input type="text" name="categoryname">
+        </div>
+        <div>
+            <label for="description">Açıklama</label>
+            <input type="text" name="description">
+        </div>
+
+        <input type="submit" value="Ekle">
+    </form>
+</div>
